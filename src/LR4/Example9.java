@@ -7,7 +7,7 @@ public class Example9 {
         System.out.print("Введите текст для шифрования: ");
         String text = id.nextLine();
         System.out.print("Введите ключ: ");
-        int key = id.nextInt() + 100;
+        int key = id.nextInt() + 100;                                                   //Сдвиг идет по дефолту на 100 и плюсуем ключ
         String encryptStr = Example9.Shifr.encrypt(text, key);
         System.out.print("Текст после преобразования :" + "\"" + encryptStr + "\"");
         System.out.print("\nВыполнить обратное преобразование? (y/n)\n");
