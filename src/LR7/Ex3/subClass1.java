@@ -2,11 +2,10 @@ package LR7.Ex3;
 
 public class subClass1 extends superClass {
     public char chr1;
-    public int chisl2;
 
     subClass1(char charEx, int intEx){
+        super(intEx);
         this.chr1 = charEx;
-        this.chisl2 = intEx;
     }
     @Override
     public String toString() {
