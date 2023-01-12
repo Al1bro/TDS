@@ -1,6 +1,6 @@
 package LR7.Ex2;
 
-class subClass extends superClass {
+public class subClass extends superClass {
     public int chisl;
     private String str2;
 
