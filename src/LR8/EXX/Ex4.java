@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Ex4 {public static void main(String[] args) { try{
     File f1=new File("E:\\1\\numIsh.txt"); f1.createNewFile();
     Scanner sc = new Scanner(System.in, "UTF-8");
-    DataOutputStream wr = new DataOutputStream(new FileOutputStream(f1.getAbsolutePath())); System.out.println("Сколько вещественных чисел записать в файл?"); int count = sc.nextInt();
+    DataOutputStream wr = new DataOutputStream(new FileOutputStream(f1.getAbsolutePath())); 
+    System.out.println("Сколько вещественных чисел записать в файл?"); 
+    int count = sc.nextInt();
     System.out.println("Введите числа:");
     for (int i = 0; i < count; i++)
         wr.writeFloat(sc.nextFloat());
