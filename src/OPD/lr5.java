@@ -50,8 +50,8 @@ public class lr5 {
             System.out.printf("Общая трудоемкость проекта равна %.2f чел.*мес.\n", MANMONTHTOTALE);
             double PLENGTH = 2.5 * Math.pow(MANMONTHTOTALE, 1./3);
             System.out.printf("Оптимальная продолжительность проекта равна %.1f месяцев\n", PLENGTH);
-            int CREWQUANTITY = (int) Math.ceil(MANMONTHTOTALE / PLENGTH);
-            System.out.printf("Средняя численность команды равна %d человек", CREWQUANTITY);
+            double CREWQUANTITY = MANMONTHTOTALE / PLENGTH;
+            System.out.printf("Средняя численность команды равна %.2f человек", CREWQUANTITY);
         }
 
         public static double MEDIANE(int minRequired, int mostProbable, int worstCase) {
