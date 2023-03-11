@@ -9,7 +9,7 @@ public class lr5 {
             System.out.println("Введите количество обработчиков событий: ");
             int ACT = user.nextInt();
             System.out.println("Введите количество новых бизнес объектов: ");
-            int qobjeCTsi = user.nextInt();
+            int objeCTsi = user.nextInt();
             System.out.println("Введите количество новых или модифицируемых бизнес методов: ");
             int qMeth = user.nextInt();
             System.out.println("Введите минимальные трудозатраты для одного экрана: ");
@@ -36,8 +36,8 @@ public class lr5 {
             int max3 = user.nextInt();
             System.out.println("Введите максимальные трудозатраты для добавления нового бизнес-метода: ");
             int max4 = user.nextInt();
-            double EUI = ,EDIANE(min1, most1, max1);
-            System.out.printf("\nСредняя трудоемкость кодирования пользовательского экрана равна %.2f чел.*час\n", EUE);
+            double EUI = MEDIANE(min1, most1, max1);
+            System.out.printf("\nСредняя трудоемкость кодирования пользовательского экрана равна %.2f чел.*час\n", EUI);
             double EACT = MEDIANE(min2, most2, max2);
             System.out.printf("Средняя трудоемкость кодирования одного обработчика событий равна %.2f чел.*час\n", EACT);
             double EBO = MEDIANE(min3, most3, max3);
@@ -57,7 +57,7 @@ public class lr5 {
             System.out.printf("Среднеквадратичное отклонение кодирования нового бизнес-метода " +
                     "равна %.2f чел.*час\n\n", CKOBM);
             double ETL = EUI * UI + EACT * ACT + EBO * objeCTsi + EBM * qMeth;
-            System.out.printf("Суммарная трудоемкость проекта равна %.2f чел.*час\n\n", Etl);
+            System.out.printf("Суммарная трудоемкость проекта равна %.2f чел.*час\n\n", ETL);
             double TCKO = Math.sqrt(UI * Math.pow(CI, 2) + ACT * Math.pow(CT, 2) +
                     objeCTsi * Math.pow(CB, 2) + qMeth * Math.pow(CKOBM, 2));
             System.out.printf("Среднеквадратичное отклонение суммарной трудоемкости кодирования проекта " +
