@@ -18,7 +18,7 @@ public class subClass1 extends superClass {
     }
 
     public int getChisl2(){
-        return chisl2;
+        return chisl1;
     }
     public char getChr(){
         return chr1;
