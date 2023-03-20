@@ -17,14 +17,14 @@ public class XmlParser {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             System.out.println("Корневой элемент: "+doc.getDocumentElement().getNodeName());
-            NodeList nodeList = doc.getElementsByTagName("book");
+            NodeList nodeList = doc.getElementsByTagName("manga");
             for (int i =0; i<nodeList.getLength();i++)
             {
                 Node node = nodeList.item(i);
                 System.out.println("\nТекущий элемент: "+node.getNodeName());
                 if (node.getNodeType() == Node.ELEMENT_NODE){
                     Element element = (Element) node;
-                    System.out.println("Название книги: "+
+                    System.out.println("Название манги: "+
                             element.getElementsByTagName("title").item(0)
                                     .getTextContent());
                     System.out.println("Автор: "+

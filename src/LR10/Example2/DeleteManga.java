@@ -3,19 +3,16 @@ package LR10.Example2;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Scanner;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class NewBook {
+public class DeleteManga {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите название книги: ");
-        String title = in.nextLine();
-        System.out.println("Введите автора: ");
-        String author = in.nextLine();
         JSONParser parser = new JSONParser();
         Object obj = null;
         try {
@@ -24,20 +21,21 @@ public class NewBook {
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
-
         JSONObject library =  (JSONObject) obj;
-        JSONArray books = (JSONArray) library.get("books");
-        JSONObject newBook = new JSONObject();
-        newBook.put("title", title);
-        newBook.put("author", author);
-        newBook.put("year", 2023);
-        books.add(newBook);
-
-        library.put("books",books);
+        JSONArray mangas = (JSONArray) library.get("manga");
+        System.out.println("Введите название манги, которую хотите удалить: ");
+        String title = in.nextLine();
+        Iterator iterator = mangas.iterator();
+        while (iterator.hasNext()) {
+            JSONObject manga = (JSONObject) iterator.next();
+            if (title.equals(manga.get("title"))) {
+                iterator.remove();
+            }
+        }
         try(FileWriter file = new FileWriter("src/LR10/Example2/example-json.json"))
         {
             file.write(library.toJSONString());
-            System.out.println("Новая книга добавлена.");
+            System.out.println("Манга "+title+" удалена.");
         }
         catch (Exception e)
         {

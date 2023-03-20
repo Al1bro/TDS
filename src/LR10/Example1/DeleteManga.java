@@ -10,7 +10,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-public class DeleteBook {
+public class DeleteManga {
     public static void main(String[] args) {
         try {
             File inputFile = new File("src/LR10/Example1/example.xml");
@@ -19,13 +19,13 @@ public class DeleteBook {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             System.out.println("Корневой элемент: "+doc.getDocumentElement().getNodeName());
-            NodeList nodeList = doc.getElementsByTagName("book");
+            NodeList nodeList = doc.getElementsByTagName("manga");
 
             Node node = nodeList.item(0);
-            Element bookElement = (Element) node;
-            bookElement.getElementsByTagName("title").item(0);
-            Node parentNode = bookElement.getParentNode();
-            parentNode.removeChild(bookElement);
+            Element mangaElement = (Element) node;
+            mangaElement.getElementsByTagName("title").item(0);
+            Node parentNode = mangaElement.getParentNode();
+            parentNode.removeChild(mangaElement);
 
             doc.setXmlStandalone(true);
             doc.normalizeDocument();
@@ -39,7 +39,7 @@ public class DeleteBook {
                     new javax.xml.transform.stream.StreamResult(new File ("src/LR10/Example1/example.xml"));
             transformer.transform(source,result);
 
-            System.out.println("Удалили первую книгу в списке");
+            System.out.println("Удалили первую мангу в списке");
         }
         catch (Exception e)
         {

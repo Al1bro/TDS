@@ -6,22 +6,22 @@ import org.json.simple.JSONObject;
 public class JsonCreator {
     public static void main(String[] args) {
         JSONObject library = new JSONObject();
-        JSONArray books = new JSONArray();
+        JSONArray manga = new JSONArray();
 
-        JSONObject book1 = new JSONObject();
-        book1.put("title","Война и Мир");
-        book1.put("author","Лев Толстой");
-        book1.put("year",1896);
+        JSONObject manga1 = new JSONObject();
+        manga1.put("title","Синяя тюрьма: Блю Ло");
+        manga1.put("author","KANESHIRO Muneyuki");
+        manga1.put("year",2018);
 
-        JSONObject book2 = new JSONObject();
-        book2.put("title","Мастер и Маргарита");
-        book2.put("author","Михаил Булгаков");
-        book2.put("year", 1967);
+        JSONObject manga2 = new JSONObject();
+        manga2.put("title","Пожиратель книг");
+        manga2.put("author","Crew Eastwood");
+        manga2.put("year", 2021);
 
-        books.add(book1);
-        books.add(book2);
+        manga.add(manga1);
+        manga.add(manga2);
 
-        library.put("books",books);
+        library.put("manga",manga);
 
         try (FileWriter file = new FileWriter("src/LR10/Example2/example-json.json"))
         {

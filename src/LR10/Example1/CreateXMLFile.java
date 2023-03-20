@@ -17,35 +17,35 @@ public class CreateXMLFile {
             Element rootElement = doc.createElement("library");
             doc.appendChild(rootElement);
 
-            Element book1 = doc.createElement("book");
-            rootElement.appendChild(book1);
+            Element manga1 = doc.createElement("manga");
+            rootElement.appendChild(manga1);
 
             Element title1 = doc.createElement("title");
-            title1.appendChild((doc.createTextNode("Война и Мир")));
-            book1.appendChild(title1);
+            title1.appendChild((doc.createTextNode("Синяя тюрьма: Блю Лок")));
+            manga1.appendChild(title1);
 
             Element author1 = doc.createElement("author");
-            author1.appendChild(doc.createTextNode("Лев Толстой"));
-            book1.appendChild(author1);
+            author1.appendChild(doc.createTextNode("KANESHIRO Muneyuki"));
+            manga1.appendChild(author1);
 
             Element year1 = doc.createElement("year");
-            year1.appendChild(doc.createTextNode("1869"));
-            book1.appendChild(year1);
+            year1.appendChild(doc.createTextNode("2018"));
+            manga1.appendChild(year1);
 
-            Element book2 = doc.createElement("book");
-            rootElement.appendChild(book2);
+            Element manga2 = doc.createElement("manga");
+            rootElement.appendChild(manga2);
 
             Element title2 = doc.createElement("title");
-            title2.appendChild(doc.createTextNode("Мастер и Маргарита"));
-            book2.appendChild(title2);
+            title2.appendChild(doc.createTextNode("Пожиратель книг"));
+            manga2.appendChild(title2);
 
             Element author2 = doc.createElement("author");
-            author2.appendChild(doc.createTextNode("Михаил Булгаков"));
-            book2.appendChild(author2);
+            author2.appendChild(doc.createTextNode("Crew Eastwood"));
+            manga2.appendChild(author2);
 
             Element year2 = doc.createElement("year");
-            year2.appendChild(doc.createTextNode("1967"));
-            book2.appendChild(year2);
+            year2.appendChild(doc.createTextNode("2021"));
+            manga2.appendChild(year2);
 
             doc.setXmlStandalone(true);
             doc.normalizeDocument();

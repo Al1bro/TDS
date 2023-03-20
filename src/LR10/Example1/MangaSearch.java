@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class BookSearch {
+public class MangaSearch {
     public static void main(String[] args) {
         try {
             File inputFile = new File("src/LR10/Example1/example.xml");
@@ -22,7 +22,7 @@ public class BookSearch {
             doc.getDocumentElement().normalize();
             System.out.println("Корневой элемент: " + doc.getDocumentElement().getNodeName());
             List<String> search = getAuthor(doc, xpath);
-            System.out.println("Книги автора:" +
+            System.out.println("Автор манги:" +
                     search);
         } catch (Exception e){
             e.printStackTrace();
@@ -36,7 +36,7 @@ public class BookSearch {
         List<String> list = new ArrayList<>();
         try {
             XPathExpression xPathExpression = xpath.compile(
-                    "/library/book[author='"+auth+"']/title/text()"
+                    "/library/manga[author='"+auth+"']/title/text()"
             );
             NodeList nodes = (NodeList) xPathExpression.evaluate(doc, XPathConstants.NODESET);
             for (int i = 0; i < nodes.getLength(); i++)

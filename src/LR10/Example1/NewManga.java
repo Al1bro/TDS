@@ -13,7 +13,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class NewBook {
+public class NewManga {
     public static void main(String[] args) {
         try{
             Scanner in = new Scanner(System.in);
@@ -21,29 +21,29 @@ public class NewBook {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
-            System.out.println("Введите название книги.");
+            System.out.println("Введите название манги:");
             String title = in.nextLine();
 
-            System.out.println("Введите автора");
+            System.out.println("Введите автора:");
             String author = in.nextLine();
 
-            System.out.println("Введите год");
+            System.out.println("Введите год:");
             String year = in.nextLine();
 
-            Element book1 = doc.createElement("book");
-            doc.getDocumentElement().appendChild(book1);
+            Element manga1 = doc.createElement("manga");
+            doc.getDocumentElement().appendChild(manga1);
 
             Element title1 = doc.createElement("title");
             title1.appendChild((doc.createTextNode(title)));
-            book1.appendChild(title1);
+            manga1.appendChild(title1);
 
             Element author1 = doc.createElement("author");
             author1.appendChild(doc.createTextNode(author));
-            book1.appendChild(author1);
+            manga1.appendChild(author1);
 
             Element year1 = doc.createElement("year");
             year1.appendChild(doc.createTextNode(year));
-            book1.appendChild(year1);
+            manga1.appendChild(year1);
 
             doc.setXmlStandalone(true);
             doc.normalizeDocument();
@@ -55,7 +55,7 @@ public class NewBook {
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new FileOutputStream("src/LR10/Example1/example.xml"));
             transformer.transform(source, result);
-            System.out.println("Книга добавлена!");
+            System.out.println("Манга добавлена!");
         }
         catch (Exception e)
         {

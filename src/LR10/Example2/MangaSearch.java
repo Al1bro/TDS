@@ -7,7 +7,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.util.Scanner;
 
-public class BookSearch {
+public class MangaSearch {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         try {
@@ -18,18 +18,18 @@ public class BookSearch {
             System.out.println("Корневой элемент: "+jsonObject.keySet().iterator().next());
             System.out.println("Введите автора: ");
             String author = in.nextLine();
-            JSONArray jsonArray = (JSONArray) jsonObject.get("books");
+            JSONArray jsonArray = (JSONArray) jsonObject.get("manga");
             for (Object o: jsonArray)
             {
-                JSONObject book = (JSONObject) o;
-                jsonArray.stream().filter(book1 -> book1 instanceof JSONObject)
-                        .map(book1 -> (JSONObject) book)
-                        .filter(book1 -> author.equals(book.get("author")))
-                        .forEach(book1->{
-                            System.out.println("\nТекущий элемент: book");
-                            System.out.println("Название книги: " + book.get("title"));
-                            System.out.println("Автор: " + book.get("author"));
-                            System.out.println("Год издания: " + book.get("year"));
+                JSONObject manga = (JSONObject) o;
+                jsonArray.stream().filter(manga1 -> manga1 instanceof JSONObject)
+                        .map(manga1 -> (JSONObject) manga)
+                        .filter(manga1 -> author.equals(manga.get("author")))
+                        .forEach(manga1->{
+                            System.out.println("\nТекущий элемент: manga");
+                            System.out.println("Название книги: " + manga.get("title"));
+                            System.out.println("Автор: " + manga.get("author"));
+                            System.out.println("Год издания: " + manga.get("year"));
                         });
             }
         }

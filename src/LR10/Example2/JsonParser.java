@@ -14,15 +14,15 @@ public class JsonParser {
                         .parse(new FileReader("src/LR10/Example2/example-json.json"));
                 JSONObject jsonObject = (JSONObject) obj;
                 System.out.println("Корневой элемент: "+jsonObject.keySet().iterator().next());
-                JSONArray jsonArray = (JSONArray) jsonObject.get("books");
+                JSONArray jsonArray = (JSONArray) jsonObject.get("manga");
 
                 for (Object o: jsonArray)
                 {
-                    JSONObject book = (JSONObject) o;
-                    System.out.println("\nТекущий элемент: book");
-                    System.out.println("Название книги: "+book.get("title"));
-                    System.out.println("Автор: "+book.get("author"));
-                    System.out.println("Год издания: "+book.get("year"));
+                    JSONObject manga = (JSONObject) o;
+                    System.out.println("\nТекущий элемент: manga");
+                    System.out.println("Название книги: "+manga.get("title"));
+                    System.out.println("Автор: "+manga.get("author"));
+                    System.out.println("Год издания: "+manga.get("year"));
                 }
             }
             catch (Exception e)
