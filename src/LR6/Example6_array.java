@@ -4,6 +4,7 @@ public class Example6_array {
     static int[] arrRt (int[] array, int value) {
         int a;
         int[] arr;
+        arr = new int[10];
         if(value > arr.length) {
             arr = new int[array.length];
             a = array.length;

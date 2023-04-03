@@ -21,6 +21,6 @@ public class Example4 {
 
     public static int Factor2(int a){
         if (a <= 1){return 1;
-        }else {return a * Factorial2(a - 2);}
+        }else {return a * Factor2(a - 2);}
     }
 }
