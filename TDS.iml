@@ -12,5 +12,7 @@
     <orderEntry type="library" name="apache.poi" level="project" />
     <orderEntry type="library" name="apache.poi.ooxml" level="project" />
     <orderEntry type="library" name="jsoup" level="project" />
+    <orderEntry type="library" name="apache.poi1" level="project" />
+    <orderEntry type="library" name="sun.mail.javax" level="project" />
   </component>
 </module>
